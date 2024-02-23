@@ -12,4 +12,15 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root "home#show"
+
+  resources :lessons
+  resources :languages, only: [:index]
+
+
+  get "cart", to:'cart#show'
+  post 'cart/add'
+  post 'cart/remove'
+  get 'clear_cart', to: 'carts#clear_cart'
+
+  
 end
