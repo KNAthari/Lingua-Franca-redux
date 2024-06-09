@@ -9,7 +9,11 @@ module.exports = {
     './app/views/**/*',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'default-image': "url('/path/to/AdobeStock_570892147.jpeg')",
+      }
+    },
   },
   plugins: [],
 
