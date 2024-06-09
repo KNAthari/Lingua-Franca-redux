@@ -18,6 +18,7 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+
     },
   },
   plugins: [
@@ -27,3 +28,5 @@ module.exports = {
     require('@tailwindcss/container-queries'),
   ]
 }
+
+
