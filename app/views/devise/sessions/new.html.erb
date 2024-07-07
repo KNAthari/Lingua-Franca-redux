@@ -1,26 +1,30 @@
-<h2>Log in</h2>
+<main class='flex flex-col items-center justify-center min-h-screen w-full bg-[#0672af]'>
+  <section class='relative border border-black border-1 shadow-lg px-6 py-10 rounded-lg'>
+    <h2 class=''>Welcome back to the <br> Lingua Language Community!</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <section class="field">
+       <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </section>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <section class="field">
+       <%= f.label :password %><br />
+       <%= f.password_field :password, autocomplete: "current-password" %>
+      </section>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+      <% if devise_mapping.rememberable? %>
+      <section class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </section>
+      <% end %>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
+      <section class="actions">
+      <%= f.submit "Log in" %>
+      </section>
+    <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    <%= render "devise/shared/links" %>
+  </section>
+</main>
 
-<%= render "devise/shared/links" %>
