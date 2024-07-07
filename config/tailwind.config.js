@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   /** @type {import('tailwindcss').Config} */
@@ -8,15 +8,6 @@ module.exports = {
     './app/javascript/**/*.js',
     './app/views/**/*',
   ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        'default-image': "url('/path/to/AdobeStock_570892147.jpeg')",
-      }
-    },
-  },
-  plugins: [],
-
   theme: {
     extend: {
       fontFamily: {
@@ -29,5 +20,5 @@ module.exports = {
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/container-queries'),
-  ]
-}
+  ],
+};
